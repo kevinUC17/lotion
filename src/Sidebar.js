@@ -1,7 +1,9 @@
-function Sidebar({ notes, addNote, deleteNote, activeNote, setActiveNote }) {
+function Sidebar({ notes, addNote, deleteNote, activeNote, setActiveNote,   openSidebar }) {
 
     const sortedNotes = notes.sort((a,b) => b.lastModified - a.lastModified);
-    return <div className = "sidebar">
+    return (
+        openSidebar?
+        <div className = "sidebar">
 
         <div className = "sidebar-header">
             <h1>Notes</h1>
@@ -31,7 +33,8 @@ function Sidebar({ notes, addNote, deleteNote, activeNote, setActiveNote }) {
             </div>
             ))}
         </div>
-    </div>
+    </div> 
+    : null);
 
 }
 

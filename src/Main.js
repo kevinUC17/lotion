@@ -1,4 +1,4 @@
-function Main({ activeNote, updateNote }) {
+function Main({ activeNote, updateNote,     openSidebar }) {
 
     const editField = (key, value) => {
         updateNote({
@@ -10,7 +10,9 @@ function Main({ activeNote, updateNote }) {
 
     if(!activeNote) return <div className="no-active-note">No note selected</div>
 
-    return <div className="main">
+    return (
+
+     <div className="main">
         <div className="main-edit">
             <input type="text" id="title" value={activeNote.title} onChange={(e) => editField("title", e.target.value)}></input>
             <textarea id="body" placeholder="Your Note Here" value={activeNote.body} onChange={(e) => editField("body", e.target.value)}></textarea>
@@ -23,6 +25,7 @@ function Main({ activeNote, updateNote }) {
         
         </div>
     </div>
+    );
 }
 
 export default Main;

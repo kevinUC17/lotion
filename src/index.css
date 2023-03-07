@@ -2,9 +2,12 @@ body,
 .App {
   font-family: sans-serif, "Helvetica Neue";
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   font-size: 16px;
+  position:absolute;
+  bottom: 0;
+  
 }
 button {
   background: none;
@@ -29,8 +32,10 @@ button:hover {
 
 .sidebar {
   width: 30%;
-  height: 100vh;
+  height: 85vh;
   border-right: 1px solid #ddd;
+  position: absolute;
+  bottom: 0;
 }
 
 .sidebar-header {
@@ -43,7 +48,7 @@ button:hover {
 }
 
 .sidebar-saved-notes {
-  height: calc(100vh - 78px);
+  height: calc(85vh - 78px);
   overflow-y: scroll;
 }
 .sidebar-note {
@@ -80,7 +85,10 @@ button:hover {
 
 .main {
   width: 70%;
-  height: 100vh;
+  height: 85vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .main-edit,
 .main-preview {
@@ -89,11 +97,14 @@ button:hover {
 
 .no-active-note {
   width: 70%;
-  height: 100vh;
-  line-height: 100vh;
+  height: 85vh;
+  position: absolute;
+  line-height: 85vh;
   text-align: center;
   font-size: 2rem;
   color: #999;
+  bottom: 0;
+  right: 0;
 }
 
 /* Editing */
@@ -152,3 +163,37 @@ a {
 
 
 
+.top {
+  width: 100%;
+  height: 15vh;
+  list-style: none;
+  border-top: 3.5px solid blueviolet;
+  border-bottom: 1px solid rgb(164, 164, 164); 
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.lotion-title {
+  font-size: 42.5px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  bottom: 25px;
+  margin: 12.5px;
+}
+
+.title-bar {
+  position: absolute;
+  font-size: 42.5px;
+  left: 25px;
+  top: -7.6px;
+}
+
+.title-description {
+  font-size: 15px;
+  text-align: center;
+  bottom: 50px;
+  color: rgb(95, 95, 95);
+}
