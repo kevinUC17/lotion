@@ -74,17 +74,6 @@ function App() {
 
         </ul>
     </div>
-    <Sidebar
-      notes={notes} 
-      addNote = {addNote} 
-      deleteNote = {deleteNote}
-
-      activeNote = {activeNote}
-      setActiveNote = {setActiveNote}
-      
-      openSidebar={openSidebar}
-      setOpenSidebar={setOpenSidebar}
-    />
     
  
 
@@ -94,20 +83,61 @@ function App() {
 
 
   <Routes>
-    <Route path ="/:id/edit" element={    <Main 
+  <Route path ="/" element={   <>     <Sidebar
+      notes={notes} 
+      addNote = {addNote} 
+      deleteNote = {deleteNote}
+
+      activeNote = {activeNote}
+      setActiveNote = {setActiveNote}
+      
+      openSidebar={openSidebar}
+      setOpenSidebar={setOpenSidebar}
+    /> </>
+    }/>
+
+
+    <Route path ="/:id/edit" element={   <> <Main 
       activeNote={getActiveNote()}  
       updateNote={updateNote}
 
       openSidebar={openSidebar}
       deleteNote = {deleteNote}
-    />}/>
-    <Route path ="/:id/preview" element={    <Main_prev
+      />     <Temp_Sidebar
+      notes={notes} 
+      addNote = {addNote} 
+      deleteNote = {deleteNote}
+
+      activeNote = {activeNote}
+      setActiveNote = {setActiveNote}
+      
+      openSidebar={openSidebar}
+      setOpenSidebar={setOpenSidebar}
+    /> </>
+    }/>
+
+
+    <Route path ="/:id/preview" element={   <> <Main_prev
       activeNote={getActiveNote()}  
       updateNote={updateNote}
 
       openSidebar={openSidebar}
       deleteNote = {deleteNote}
-    />}/>
+      
+    /> <Sidebar
+    notes={notes} 
+    addNote = {addNote} 
+    deleteNote = {deleteNote}
+
+    activeNote = {activeNote}
+    setActiveNote = {setActiveNote}
+    
+    openSidebar={openSidebar}
+    setOpenSidebar={setOpenSidebar}
+  />
+  </>
+    
+    }/>
   </Routes>
 
   </>

@@ -21,7 +21,7 @@ function Main({ activeNote, updateNote, deleteNote,    openSidebar }) {
      <div className="main">
 
         <div className = "writeHeader">
-            <h1 className="main-preview-title">{activeNote.title}</h1>
+            <h1 className="main-preview-title">Untitled Notes</h1>
             <div className="imdead">
                 <ul><button className = ".editSaveButton" onClick = {(e) => activeNote(activeNote.id)}><Link to = {`/1/preview`} >Save</Link></button></ul>
                 <ul><button className = ".deleteButton" onClick = {(e) => deleteNote(activeNote.id)}><Link to = {`/`} >Delete</Link></button></ul>
