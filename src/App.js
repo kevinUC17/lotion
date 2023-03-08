@@ -10,6 +10,7 @@ import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
 function App() {
+
   const[notes, setNotes] = useState(
     localStorage.saved_notes? JSON.parse(localStorage.saved_notes) :  []);
   const [activeNote, setActiveNote] = useState(false);
@@ -98,7 +99,7 @@ function App() {
     }/>
 
 
-    <Route path ="/:id/edit" element={   <> <Main 
+    <Route path ="/notes/:id/edit" element={   <> <Main 
       activeNote={getActiveNote()}  
       updateNote={updateNote}
 
@@ -118,7 +119,7 @@ function App() {
     }/>
 
 
-    <Route path ="/:id/preview" element={   <> <Main_prev
+    <Route path ="/notes/:id/preview" element={   <> <Main_prev
       activeNote={getActiveNote()}  
       updateNote={updateNote}
 

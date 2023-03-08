@@ -23,11 +23,11 @@ function Sidebar({ notes, addNote, deleteNote, activeNote, setActiveNote,   open
 
         <div className = "sidebar-header">
             <h1>Notes</h1>
-            <h1><button onClick = {addNote}><Link to = {`/${(idNum)}/edit`} >+</Link></button></h1>
+            <h1><button onClick = {addNote}><Link to = {`/notes/${(idNum)}/edit`} >+</Link></button></h1>
         </div>
 
         <div className="sidebar-saved-notes">
-        <Link to ={`/${idNum}/preview`}> 
+        <Link to ={`/notes/${idNum}/preview`}> 
             {sortedNotes.map((note) => (
                 <div className={`sidebar-note ${note.id === activeNote && "active"}`}
                 onClick={() => {setActiveNote(note.id)}} >
