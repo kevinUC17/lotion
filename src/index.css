@@ -42,6 +42,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   padding: 25px;
+  border-bottom: 1px solid rgb(164, 164, 164); 
 }
 .sidebar-header h1 {
   margin: 0;
@@ -85,7 +86,7 @@ button:hover {
 
 .main {
   width: 70%;
-  height: 85vh;
+  height: 84.5vh;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -97,7 +98,7 @@ button:hover {
 
 .no-active-note {
   width: 70%;
-  height: 85vh;
+  height: 84.5vh;
   position: absolute;
   line-height: 85vh;
   text-align: center;
@@ -196,4 +197,29 @@ a {
   text-align: center;
   bottom: 50px;
   color: rgb(95, 95, 95);
+}
+
+
+
+
+.writeHeader {
+  padding: 25px;
+  border-bottom: 1px solid rgb(164, 164, 164); 
+}
+
+.imdead {
+  display: flex;
+  justify-content: right;
+}
+
+
+
+.writeHeader-deleteButton{
+  position: absolute;
+  top: 15px;
+}
+
+.writeHeader-editSaveButton{
+  position: absolute;
+  top: 10px;
 }

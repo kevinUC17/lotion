@@ -1,9 +1,12 @@
 import "./index.css";
 import Sidebar from "./Sidebar";
 import Main from "./Main";
-import Title from "./Title";
+import Main_prev from "./Main_prev";
 import { useEffect, useState } from "react";
 import uuid from "react-uuid";
+
+import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 
 function App() {
   const[notes, setNotes] = useState(JSON.parse(localStorage.saved_notes) || []);
@@ -55,9 +58,12 @@ function App() {
 
 
 
-  return <div className="App">
-    
-    <div className="title">
+  return (
+    <>
+  
+  <div className="App">
+
+    <div className="title" >
         <ul className="top">
         <li><h1 className="lotion-title">Lotion</h1></li>
         <li><h1 className="title-bar"><button onClick={()=>setOpenSidebar(!openSidebar)}>&#9776;</button></h1></li>
@@ -65,7 +71,7 @@ function App() {
 
         </ul>
     </div>
-    <Sidebar 
+    <Sidebar
       notes={notes} 
       addNote = {addNote} 
       deleteNote = {deleteNote}
@@ -76,14 +82,32 @@ function App() {
       openSidebar={openSidebar}
       setOpenSidebar={setOpenSidebar}
     />
-    <Main 
+ 
+
+  </div>
+
+
+
+
+  <Routes>
+    <Route path ="/:id/edit" element={    <Main 
       activeNote={getActiveNote()}  
       updateNote={updateNote}
 
       openSidebar={openSidebar}
-    />
-  </div>
+      deleteNote = {deleteNote}
+    />}/>
+    <Route path ="/:id/preview" element={    <Main_prev
+      activeNote={getActiveNote()}  
+      updateNote={updateNote}
 
+      openSidebar={openSidebar}
+      deleteNote = {deleteNote}
+    />}/>
+  </Routes>
+
+  </>
+  );
 }
 
 export default App;
