@@ -10,7 +10,8 @@ import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
 function App() {
-  const[notes, setNotes] = useState(JSON.parse(localStorage.saved_notes) || []);
+  const[notes, setNotes] = useState(
+    localStorage.saved_notes? JSON.parse(localStorage.saved_notes) :  []);
   const [activeNote, setActiveNote] = useState(false);
 
   ///Storage
