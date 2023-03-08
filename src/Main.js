@@ -10,6 +10,11 @@ function Main({ activeNote, updateNote, deleteNote,    openSidebar }) {
         });
     };
 
+    const updateField = () => {
+
+
+    };
+
     if(!activeNote) return <div className="no-active-note">No note selected</div>
 
     return (
@@ -18,8 +23,8 @@ function Main({ activeNote, updateNote, deleteNote,    openSidebar }) {
         <div className = "writeHeader">
             <h1 className="main-preview-title">{activeNote.title}</h1>
             <div className="imdead">
-                <ul><button className = ".editSaveButton"><Link to = {`/1/preview`} >Save</Link></button></ul>
-                <ul><button className = ".deleteButton" onClick = {(e) => deleteNote(activeNote.id)}>Delete</button></ul>
+                <ul><button className = ".editSaveButton" onClick = {(e) => activeNote(activeNote.id)}><Link to = {`/1/preview`} >Save</Link></button></ul>
+                <ul><button className = ".deleteButton" onClick = {(e) => deleteNote(activeNote.id)}><Link to = {`/`} >Delete</Link></button></ul>
             </div>
         </div>
 

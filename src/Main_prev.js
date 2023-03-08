@@ -19,7 +19,7 @@ function Main_prev({ activeNote, updateNote, deleteNote,    openSidebar }) {
             <h1 className="main-preview-title">{activeNote.title}</h1>
             <div className="imdead">
                 <ul><button className = ".editSaveButton"><Link to = {`/1/edit`} >Edit</Link></button></ul>
-                <ul><button className = ".deleteButton" onClick = {(e) => deleteNote(activeNote.id)}>Delete</button></ul>
+                <ul><button className = ".deleteButton" onClick = {(e) => deleteNote(activeNote.id)}><Link to = {`/`} >Delete</Link></button></ul>
             </div>
         </div>
 

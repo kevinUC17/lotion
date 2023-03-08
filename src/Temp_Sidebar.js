@@ -1,7 +1,7 @@
 import { Link, useParams, navigate } from "react-router-dom";
 import { useState } from "react";
 
-function Sidebar({ notes, addNote, deleteNote, activeNote, setActiveNote,   openSidebar }) {
+function Temp_Sidebar({ notes, addNote, deleteNote, activeNote, setActiveNote,   openSidebar }) {
 
     const [count, setCount] = useState(1);
 
@@ -23,30 +23,22 @@ function Sidebar({ notes, addNote, deleteNote, activeNote, setActiveNote,   open
 
         <div className = "sidebar-header">
             <h1>Notes</h1>
-            <h1><button onClick = {addNote}><Link to = {`/${(idNum)}/edit`} >+</Link></button></h1>
+            <h1><button onClick = ""><Link to = {`/${(idNum)}/edit`} >+</Link></button></h1>
         </div>
 
         <div className="sidebar-saved-notes">
         <Link to ={`/${idNum}/preview`}> 
             {sortedNotes.map((note) => (
                 <div className={`sidebar-note ${note.id === activeNote && "active"}`}
-                onClick={() => {setActiveNote(note.id)}} >
+                onClick={() => {}} >
 
                         <div className="sidebar-note-title">
-                            <strong>{ note.title}</strong>
-                            {//<button onClick = {(e) => deleteNote(note.id)}><Link to ="/">Delete</Link></button>//
-                            }
+                            <strong>Untitled</strong>
                         </div>
 
 
-                        <small className="note-record">
-                            Last modified {new Date(note.lastDateModified).toLocaleDateString("en-GB", {
-                                hour: "2-digit",
-                                minute: "2-digit",  /*THIS IS TEMPORARY*/
-                            })}
-                            </small>
 
-                        <p>{note.body && note.body.substr(0, 100) + "..."}</p>
+                        <p>...</p>
                     
                 </div>
             ))}
@@ -59,4 +51,4 @@ function Sidebar({ notes, addNote, deleteNote, activeNote, setActiveNote,   open
 
 }
 
-export default Sidebar;
+export default Temp_Sidebar;

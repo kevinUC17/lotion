@@ -1,5 +1,6 @@
 import "./index.css";
 import Sidebar from "./Sidebar";
+import Temp_Sidebar from "./Temp_Sidebar";
 import Main from "./Main";
 import Main_prev from "./Main_prev";
 import { useEffect, useState } from "react";
@@ -47,6 +48,8 @@ function App() {
       return note;
     });
 
+  
+
     setNotes(updatedNoteArray);
   };
 
@@ -82,6 +85,7 @@ function App() {
       openSidebar={openSidebar}
       setOpenSidebar={setOpenSidebar}
     />
+    
  
 
   </div>
